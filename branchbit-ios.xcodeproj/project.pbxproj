@@ -22,14 +22,11 @@
 		071D0A3324D3871500D6D89F /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D0A3224D3871500D6D89F /* UIViewExtensions.swift */; };
 		071D0A3524D3902C00D6D89F /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D0A3424D3902C00D6D89F /* DatePicker.swift */; };
 		071D0A3724D3920600D6D89F /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071D0A3624D3920600D6D89F /* DatePicker.xib */; };
-		071D0A3924D3961D00D6D89F /* DateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D0A3824D3961D00D6D89F /* DateAlert.swift */; };
-		071D0A3B24D3963700D6D89F /* DateAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071D0A3A24D3963700D6D89F /* DateAlert.xib */; };
 		071D0A3D24D452EF00D6D89F /* Select.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071D0A3C24D452EF00D6D89F /* Select.xib */; };
 		071D0A4124D4539600D6D89F /* Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D0A4024D4539600D6D89F /* Select.swift */; };
 		071D0A4324D4580800D6D89F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D0A4224D4580800D6D89F /* CustomTextField.swift */; };
 		071D0A4524D45C3500D6D89F /* SelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D0A4424D45C3500D6D89F /* SelectCell.swift */; };
 		071D0A4724D45C4200D6D89F /* SelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071D0A4624D45C4200D6D89F /* SelectCell.xib */; };
-		071D0A4924D45D2100D6D89F /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D0A4824D45D2100D6D89F /* CameraController.swift */; };
 		071D0A4B24D4644300D6D89F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D0A4A24D4644300D6D89F /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,14 +69,11 @@
 		071D0A3224D3871500D6D89F /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		071D0A3424D3902C00D6D89F /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		071D0A3624D3920600D6D89F /* DatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
-		071D0A3824D3961D00D6D89F /* DateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAlert.swift; sourceTree = "<group>"; };
-		071D0A3A24D3963700D6D89F /* DateAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateAlert.xib; sourceTree = "<group>"; };
 		071D0A3C24D452EF00D6D89F /* Select.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Select.xib; sourceTree = "<group>"; };
 		071D0A4024D4539600D6D89F /* Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select.swift; sourceTree = "<group>"; };
 		071D0A4224D4580800D6D89F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		071D0A4424D45C3500D6D89F /* SelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCell.swift; sourceTree = "<group>"; };
 		071D0A4624D45C4200D6D89F /* SelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCell.xib; sourceTree = "<group>"; };
-		071D0A4824D45D2100D6D89F /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		071D0A4A24D4644300D6D89F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +159,6 @@
 		071D0A2224D3727000D6D89F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				071D0A4824D45D2100D6D89F /* CameraController.swift */,
 				071D0A2D24D382E700D6D89F /* Components */,
 				071D09F624D3718400D6D89F /* ViewController.swift */,
 				071D0A2B24D3808100D6D89F /* NextViewController.swift */,
@@ -197,8 +190,6 @@
 				071D0A3624D3920600D6D89F /* DatePicker.xib */,
 				071D0A3024D3848500D6D89F /* CameraCell.swift */,
 				071D0A3424D3902C00D6D89F /* DatePicker.swift */,
-				071D0A3824D3961D00D6D89F /* DateAlert.swift */,
-				071D0A3A24D3963700D6D89F /* DateAlert.xib */,
 				071D0A3C24D452EF00D6D89F /* Select.xib */,
 				071D0A4624D45C4200D6D89F /* SelectCell.xib */,
 				071D0A4424D45C3500D6D89F /* SelectCell.swift */,
@@ -317,7 +308,6 @@
 				071D09FC24D3718600D6D89F /* Assets.xcassets in Resources */,
 				071D0A3724D3920600D6D89F /* DatePicker.xib in Resources */,
 				071D0A3D24D452EF00D6D89F /* Select.xib in Resources */,
-				071D0A3B24D3963700D6D89F /* DateAlert.xib in Resources */,
 				071D09FA24D3718400D6D89F /* Main.storyboard in Resources */,
 				071D0A4724D45C4200D6D89F /* SelectCell.xib in Resources */,
 			);
@@ -348,7 +338,6 @@
 				071D0A4324D4580800D6D89F /* CustomTextField.swift in Sources */,
 				071D0A3324D3871500D6D89F /* UIViewExtensions.swift in Sources */,
 				071D0A2C24D3808100D6D89F /* NextViewController.swift in Sources */,
-				071D0A3924D3961D00D6D89F /* DateAlert.swift in Sources */,
 				071D09F724D3718400D6D89F /* ViewController.swift in Sources */,
 				071D09F324D3718400D6D89F /* AppDelegate.swift in Sources */,
 				071D0A2624D3731C00D6D89F /* OptionsModel.swift in Sources */,
@@ -356,7 +345,6 @@
 				071D09F524D3718400D6D89F /* SceneDelegate.swift in Sources */,
 				071D0A3524D3902C00D6D89F /* DatePicker.swift in Sources */,
 				071D0A4124D4539600D6D89F /* Select.swift in Sources */,
-				071D0A4924D45D2100D6D89F /* CameraController.swift in Sources */,
 				071D0A4524D45C3500D6D89F /* SelectCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
