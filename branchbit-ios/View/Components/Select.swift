@@ -9,7 +9,7 @@
 import UIKit
 
 class Select: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
-    var data: [UIColor] = [.blue,.brown,.green,.magenta,.cyan]
+    var data: [UIColor] = OptionsModel.getColors()
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }

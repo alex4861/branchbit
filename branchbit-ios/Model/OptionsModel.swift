@@ -6,7 +6,7 @@
 //  Copyright © 2020 Elektra. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class OptionsModel{
     static func getData() -> [String]{
@@ -14,5 +14,8 @@ class OptionsModel{
     }
     static func getOptions() -> [String]{
         return ["Masculino", "Femenino"]
+    }
+    static func getColors() -> [UIColor]{
+        return [.blue,.brown,.green,.magenta,.cyan]
     }
 }

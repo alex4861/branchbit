@@ -20,15 +20,11 @@ class NextViewController: UITableViewController, UINavigationControllerDelegate,
         tableView.rowHeight = UITableView.automaticDimension
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return data.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         switch data[section]{
         case "Sexo (Masculio/Femenino)":
             return options.count
@@ -56,40 +52,14 @@ class NextViewController: UITableViewController, UINavigationControllerDelegate,
             cell.isCamera = false
             cell.SetPhoto()
             cell.selectionStyle = .none
-
             cell.Photo.downloaded(from: "https://http2.mlstatic.com/vegeta-tamano-real-para-armar-en-papercraft-D_NQ_NP_892880-MLA26232224460_102017-F.jpg")
             return cell
         case "Nombre Completo":
-            let cell: DatePicker = UIView.fromNib()
-            cell.textField.maxLength = 35
-            cell.selectionStyle = .none
-            cell.textField.valueType = .alphaNumeric
-            cell.textField.delegate = self
-            return cell
+            return setInput(maxLength: 35, InputType: .alphaNumeric)
         case "Número Telefónico":
-            let cell: DatePicker = UIView.fromNib()
-            cell.textField.maxLength = 10
-            cell.selectionStyle = .none
-
-            cell.textField.valueType = .phoneNumber
-            cell.textField.delegate = self
-            cell.textField.keyboardType = .numberPad
-            return cell
+            return setInput(maxLength: 10, InputType: .onlyNumbers, keyboardType: .numberPad)
         case "Fecha de Nacimiento":
-            datecell.textField.placeholder = "Selecciona una fecha"
-            let picker = UIDatePicker()
-            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(BarButtonTapped))
-            doneButton.title = "Seleccionar Hora"
-            let toolbar = UIToolbar()
-            toolbar.sizeToFit()
-            toolbar.setItems([doneButton], animated: true)
-            toolbar.isTranslucent = false
-            datecell.textField.inputAccessoryView = toolbar
-            datecell.textField.inputView = picker
-            datecell.selectionStyle = .none
-            datecell.textField.text = date
-            picker.addTarget(self, action: #selector(self.dateChanged(_:)), for: .valueChanged)
-            return datecell
+            return setDateCell()
         case "Sexo (Masculio/Femenino)":
             let cell =  UITableViewCell()
             cell.textLabel?.text = options[indexPath.row]
@@ -105,7 +75,6 @@ class NextViewController: UITableViewController, UINavigationControllerDelegate,
 
     @objc func BarButtonTapped(_ sender: UIBarButtonItem){
         datecell.textField.text = date
-
         self.view.endEditing(true)
     }
     @objc func dateChanged(_ sender: UIDatePicker){
@@ -113,6 +82,35 @@ class NextViewController: UITableViewController, UINavigationControllerDelegate,
         datef.dateStyle = .medium
         date = datef.string(from: sender.date)
         debugPrint(date)
+    }
+    
+    func setDateCell() -> UITableViewCell{
+        datecell.textField.placeholder = "Selecciona una fecha"
+        let picker = UIDatePicker()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(BarButtonTapped))
+        doneButton.title = "Seleccionar Hora"
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        toolbar.setItems([doneButton], animated: true)
+        toolbar.isTranslucent = false
+        datecell.textField.inputAccessoryView = toolbar
+        datecell.textField.inputView = picker
+        datecell.selectionStyle = .none
+        datecell.textField.text = date
+        picker.addTarget(self, action: #selector(self.dateChanged(_:)), for: .valueChanged)
+        return datecell
+
+    }
+    
+    func setInput(maxLength: Int, InputType: ValueType, keyboardType: UIKeyboardType = .default) -> UITableViewCell{
+        let cell: DatePicker = UIView.fromNib()
+        cell.textField.maxLength = maxLength
+        cell.selectionStyle = .none
+
+        cell.textField.valueType = InputType
+        cell.textField.delegate = self
+        cell.textField.keyboardType = keyboardType
+        return cell
     }
 
 }
@@ -126,13 +124,10 @@ extension NextViewController{
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
-
         guard let image = info[.editedImage] as? UIImage else {
             print("No image found")
             return
         }
-
-        // print out the image size as a test
         cameraCell.Photo.image = image
         cameraCell.SetPhoto()
     }
@@ -149,8 +144,6 @@ extension NextViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-        // Verify all the conditions
         if let sdcTextField = textField as? CustomTextField {
             return sdcTextField.verifyFields(shouldChangeCharactersIn: range, replacementString: string)
         }
