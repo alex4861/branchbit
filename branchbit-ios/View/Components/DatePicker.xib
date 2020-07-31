@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="74" id="CSJ-1O-lSf" customClass="DatePicker" customModule="branchbit_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CSJ-1O-lSf" id="ace-9h-Trk">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jwd-B5-0oU" customClass="CustomTextField" customModule="branchbit_ios" customModuleProvider="target">
+                        <rect key="frame" x="8" y="20" width="398" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="C2l-1f-AcM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Jwd-B5-0oU" secondAttribute="trailing" constant="8" id="45P-bS-HNS"/>
+                    <constraint firstAttribute="bottom" secondItem="Jwd-B5-0oU" secondAttribute="bottom" priority="250" constant="20" id="7Zb-4e-kGA"/>
+                    <constraint firstItem="Jwd-B5-0oU" firstAttribute="leading" secondItem="ace-9h-Trk" secondAttribute="leading" constant="8" id="DGq-4E-5Yt"/>
+                    <constraint firstItem="Jwd-B5-0oU" firstAttribute="top" secondItem="ace-9h-Trk" secondAttribute="top" priority="250" constant="20" id="wGO-YX-jfr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="Jwd-B5-0oU" id="Sbh-Pw-Bir"/>
+            </connections>
+            <point key="canvasLocation" x="134.78260869565219" y="227.67857142857142"/>
+        </tableViewCell>
+    </objects>
+</document>
