@@ -42,6 +42,7 @@ class NextViewController: UITableViewController, UINavigationControllerDelegate,
     }
     
     let cameraCell: CameraCell = UIView.fromNib()
+    let datecell: DatePicker = UIView.fromNib()
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch data[indexPath.section] {
@@ -75,8 +76,7 @@ class NextViewController: UITableViewController, UINavigationControllerDelegate,
             cell.textField.keyboardType = .numberPad
             return cell
         case "Fecha de Nacimiento":
-            let cell: DatePicker = UIView.fromNib()
-            cell.textField.placeholder = "Selecciona una fecha"
+            datecell.textField.placeholder = "Selecciona una fecha"
             let picker = UIDatePicker()
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(BarButtonTapped))
             doneButton.title = "Seleccionar Hora"
@@ -84,12 +84,12 @@ class NextViewController: UITableViewController, UINavigationControllerDelegate,
             toolbar.sizeToFit()
             toolbar.setItems([doneButton], animated: true)
             toolbar.isTranslucent = false
-            cell.textField.inputAccessoryView = toolbar
-            cell.textField.inputView = picker
-            cell.selectionStyle = .none
-            cell.textField.text = date
+            datecell.textField.inputAccessoryView = toolbar
+            datecell.textField.inputView = picker
+            datecell.selectionStyle = .none
+            datecell.textField.text = date
             picker.addTarget(self, action: #selector(self.dateChanged(_:)), for: .valueChanged)
-            return cell
+            return datecell
         case "Sexo (Masculio/Femenino)":
             let cell =  UITableViewCell()
             cell.textLabel?.text = options[indexPath.row]
@@ -104,11 +104,15 @@ class NextViewController: UITableViewController, UINavigationControllerDelegate,
     }
 
     @objc func BarButtonTapped(_ sender: UIBarButtonItem){
+        datecell.textField.text = date
+
         self.view.endEditing(true)
     }
     @objc func dateChanged(_ sender: UIDatePicker){
-        
-        date = DateFormatter().string(from: sender.date)
+        let datef = DateFormatter()
+        datef.dateStyle = .medium
+        date = datef.string(from: sender.date)
+        debugPrint(date)
     }
 
 }
